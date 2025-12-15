@@ -6,7 +6,8 @@ import "react-day-picker/dist/style.css";
 import Breadcrumb from '../components/ui/Breadcrumb';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTimes
+  faTimes,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
 // Hook personalizado para gerenciar férias
 function useFerias() {
@@ -399,6 +400,10 @@ export default function Ferias() {
       </div>
 
       <FeriasHistorico />
+      <a href="/">
+<FontAwesomeIcon icon={faArrowLeft} className='w-1' />Voltar
+      </a>
+      
     </main>
   );
 }
