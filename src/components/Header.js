@@ -37,10 +37,10 @@ export default function Header() {
             <div className="header">
               <div className="title">Acesso Rápido</div>
             </div>
-            <a className="br-item" href="#">Link de acesso 1</a>
-            <a className="br-item" href="#">Link de acesso 2</a>
-            <a className="br-item" href="#">Link de acesso 3</a>
-            <a className="br-item" href="#">Link de acesso 4</a>
+            <a className="br-item" href="#">Benefícios</a>
+            <a className="br-item" href="#">Férias</a>
+            <a className="br-item" href="#">Licença Prêmio</a>
+            <a className="br-item" href="#">Informe de Rendimentos</a>
           </div>
         </div>
 

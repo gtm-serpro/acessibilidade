@@ -27,42 +27,43 @@ import { ActionCard } from "./ui/ActionCard";
 
 const cards = [
   {
-    title: "Cadastro Pessoal",
-    description: "Inscreva, consulte e atualize os dados do seu cadastro.",
-    icon: faUser,
-    href: "/cadastro-pessoal",
-  },
-  {
-    title: "Cadastro Funcionário",
-    description: "Inscreva, consulte e atualize os dados do cadastro do funcionário.",
-    icon: faIdBadge,
-    href: "/cadastro-funcionario",
-  },
-  {
     title: "Férias",
-    description: "Defina o período das suas férias!",
+    description: "Solicite, acompanhe e consulte os períodos de férias disponíveis.",
     icon: faUmbrellaBeach,
     href: "/ferias",
   },
   {
     title: "Benefícios",
-    description: "Consulte todos os benefícios.",
+    description: "Consulte, acompanhe e verifique os benefícios disponíveis para você.",
     icon: faGift,
     href: "/beneficios",
   },
   {
-    title: "Licença Prêmio",
-    description: "Consulte etc etc etc",
+    title: "Licença-Prêmio",
+    description: "Consulte, acompanhe e verifique as informações sobre licença-prêmio.",
     icon: faMedal,
     href: "/licenca-premio",
   },
   {
-    title: "Informe de Rendimentos (IRRF)",
-    description: "Baixe aqui o Informe de Rendimentos para o exercício desejado.",
+    title: "Informe de Rendimentos",
+    description: "Acesse, consulte e baixe o informe de rendimentos para o exercício desejado.",
     icon: faFileInvoiceDollar,
     href: "/irrf",
   },
+    {
+    title: "Cadastro Pessoal",
+    description: "Consulte, atualize e acompanhe as informações do seu cadastro pessoal.",
+    icon: faUser,
+    href: "/cadastro-pessoal",
+  },
+  {
+    title: "Cadastro de Funcionário",
+    description: "Consulte, atualize e acompanhe as informações do cadastro do funcionário.",
+    icon: faIdBadge,
+    href: "/cadastro-funcionario",
+  },
 ];
+
 
 
 export default function Main() {
@@ -196,7 +197,7 @@ export default function Main() {
                 <div className="row">
                   
                   {cards.map((card) => (
-                    <div className='col-sm-4'>
+                    <div key={card.title} className="col-12 col-sm-6 col-lg-4 d-flex">
                     <ActionCard
                       key={card.title}
                       title={card.title}
