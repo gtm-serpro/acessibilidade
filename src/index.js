@@ -8,7 +8,7 @@ import '@govbr-ds/core/dist/core-init.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.StrictMode >
     <App />
   </React.StrictMode>
 );

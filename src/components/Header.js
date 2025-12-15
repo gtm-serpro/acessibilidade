@@ -37,10 +37,10 @@ export default function Header() {
             <div className="header">
               <div className="title">Acesso Rápido</div>
             </div>
-            <a className="br-item" href="#">Benefícios</a>
-            <a className="br-item" href="#">Férias</a>
-            <a className="br-item" href="#">Licença Prêmio</a>
-            <a className="br-item" href="#">Informe de Rendimentos</a>
+            <a className="br-item" href="/beneficios">Benefícios</a>
+            <a className="br-item" href="/ferias">Férias</a>
+            <a className="br-item" href="/licenca-premio">Licença Prêmio</a>
+            <a className="br-item" href="/irrf">Informe de Rendimentos</a>
           </div>
         </div>
 
@@ -129,11 +129,12 @@ export default function Header() {
             <FontAwesomeIcon icon={faBars} />
           </button>
         </div>
-
-        <div className="header-info">
-          <div className="header-title">SGP</div>
-          <div className="header-subtitle">Sistema de Gestão de Pessoas</div>
-        </div>
+        <a href='/'>
+          <div className="header-info">
+            <div className="header-title">SGP</div>
+            <div className="header-subtitle">Sistema de Gestão de Pessoas</div>
+          </div>
+        </a>
       </div>
 
       <div className="header-search">

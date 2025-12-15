@@ -6,7 +6,7 @@ export function ActionCard({ title, description, icon, href }) {
     // <div className="action-card">
       <a
         href={href}
-        className="br-card text-decoration-none w-100 h-100 p-sm-1"
+        className="br-card text-decoration-none w-100 h-100 p-sm-1 "
         role="link"
       >
         <div className="card-header d-flex flex-column align-items-center">

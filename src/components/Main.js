@@ -69,7 +69,7 @@ const cards = [
 
 export default function Main() {
     return (  
-        <main className="d-flex flex-fill mb-5" id="main">
+        <main className="d-flex" id="main">
         <div className="container d-flex">
           <div className="row">
             {/* Menu Lateral */}
