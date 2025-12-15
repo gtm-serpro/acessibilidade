@@ -4,7 +4,10 @@ import { format, differenceInDays, addDays } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import "react-day-picker/dist/style.css";
 import Breadcrumb from '../components/ui/Breadcrumb';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTimes
+} from '@fortawesome/free-solid-svg-icons';
 // Hook personalizado para gerenciar férias
 function useFerias() {
   const [periodos, setPeriodos] = useState([]);
@@ -229,7 +232,7 @@ function FeriasPeriodos({ periodos, onRemove }) {
                 aria-label="Remover período"
                 onClick={() => onRemove(index)}
               >
-                <i className="fas fa-times" aria-hidden="true"></i>
+                <FontAwesomeIcon icon={faTimes} aria-hidden="true" />
               </button>
             </div>
           );
