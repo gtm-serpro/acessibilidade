@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DayPicker } from "react-day-picker";
 import { format, differenceInDays, addDays } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import "react-day-picker/dist/style.css";
+import Breadcrumb from '../components/ui/Breadcrumb';
 
 // Hook personalizado para gerenciar férias
 function useFerias() {
@@ -332,22 +333,9 @@ export default function Ferias() {
 
   return (
     <main className="container-lg mt-4 mb-5" id="main-content">
-      <nav className="br-breadcrumb mb-4">
-        <ol className="crumb-list">
-          <li className="crumb">
-            <a className="br-button circle" href="/">
-              <span className="sr-only">Página inicial</span>
-              <i className="fas fa-home" />
-            </a>
-          </li>
-          <li className="crumb">
-            <i className="icon fas fa-chevron-right" />
-            <span>Férias</span>
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumb/>
 
-      <h1 className="mb-4">Solicitação de Férias</h1>
+      <h1 className="mb-4">Férias</h1>
 
       <div className="row">
         <div className="col-lg-8 mb-4">
