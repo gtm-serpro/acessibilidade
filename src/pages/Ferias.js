@@ -335,8 +335,8 @@ export default function Ferias() {
   };
 
   return (
-    <main className="container-lg mt-4 mb-5" id="main-content">
-      <Breadcrumb/>
+    <main className="container-lg mb-5" id="main-content">
+      <Breadcrumb current="Férias"/>
 
       <h1 className="mb-4">Férias</h1>
 

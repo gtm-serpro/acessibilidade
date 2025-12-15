@@ -117,7 +117,7 @@ export default function Header() {
 
     <div className="header-bottom">
       <div className="header-menu">
-        <div className="header-menu-trigger">
+        <div className="header-menu-trigger  ml-n2">
           <button
             className="br-button small circle"
             type="button"
@@ -126,7 +126,7 @@ export default function Header() {
             data-target="#main-navigation"
             id="menu-compact"
           >
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBars}/>
           </button>
         </div>
         <a href='/'>
