@@ -22,7 +22,6 @@ import {
   faLinkedinIn, 
   faWhatsapp 
 } from '@fortawesome/free-brands-svg-icons';
-import Breadcrumb from './ui/Breadcrumb';
 import { ActionCard } from "./ui/ActionCard";
 
 const cards = [
@@ -90,44 +89,44 @@ export default function Main() {
                   
                   <nav className="menu-body" role="tree">
                     <div className="menu-folder">
-                      <a className="menu-item" href="javascript:void(0)" role="treeitem">
+                      <a className="menu-item" href="/" role="treeitem" aria-selected="false">
                         <span className="icon"><FontAwesomeIcon icon={faBell} aria-hidden="true" /></span>
                         <span className="content">Camada 1</span>
                       </a>
                       <ul>
                         <li>
-                          <a className="menu-item" href="javascript:void(0)" role="treeitem">
+                          <a className="menu-item" href="/" role="treeitem" aria-selected="false">
                             <span className="icon"><FontAwesomeIcon icon={faHeart} aria-hidden="true" /></span>
                             <span className="content">Camada 2</span>
                           </a>
                         </li>
                         <li>
-                          <a className="menu-item" href="javascript:void(0)" role="treeitem">
+                          <a className="menu-item" href="/" role="treeitem" aria-selected="false">
                             <span className="icon"><FontAwesomeIcon icon={faAddressBook} aria-hidden="true" /></span>
                             <span className="content">Camada 2</span>
                           </a>
                           <ul>
                             <li>
-                              <a className="menu-item" href="javascript:void(0)" role="treeitem">
+                              <a className="menu-item" href="/" role="treeitem" aria-selected="false">
                                 <span className="icon"><FontAwesomeIcon icon={faBook} aria-hidden="true" /></span>
                                 <span className="content">Camada 3</span>
                               </a>
                             </li>
                             <li>
-                              <a className="menu-item" href="javascript:void(0)" role="treeitem">
+                              <a className="menu-item" href="/" role="treeitem" aria-selected="false">
                                 <span className="icon"><FontAwesomeIcon icon={faTree} aria-hidden="true" /></span>
                                 <span className="content">Camada 3</span>
                               </a>
                               <ul>
                                 <li>
-                                  <a className="menu-item" href="javascript:void(0)" role="treeitem">
+                                  <a className="menu-item" href="/" role="treeitem" aria-selected="false">
                                     <span className="content">Camada 4</span>
                                   </a>
                                 </li>
                               </ul>
                             </li>
                             <li>
-                              <a className="menu-item" href="javascript:void(0)">
+                              <a className="menu-item" href="/">
                                 <span className="icon"><FontAwesomeIcon icon={faMoon} aria-hidden="true" /></span>
                                 <span className="content">Camada 3</span>
                               </a>
@@ -135,7 +134,7 @@ export default function Main() {
                           </ul>
                         </li>
                         <li>
-                          <a className="menu-item" href="javascript:void(0)">
+                          <a className="menu-item" href="/">
                             <span className="icon"><FontAwesomeIcon icon={faArchive} aria-hidden="true" /></span>
                             <span className="content">Camada 2</span>
                           </a>
@@ -150,11 +149,11 @@ export default function Main() {
                       <img src="Gov.br_logo.svg" alt="Logo"/>
                     </div>
                     <div className="menu-links">
-                      <a href="javascript:void(0)">
+                      <a href="/">
                         <span className="mr-1">Link externo 1</span>
                         <FontAwesomeIcon icon={faExternalLinkSquareAlt} aria-hidden="true" />
                       </a>
-                      <a href="javascript:void(0)">
+                      <a href="/">
                         <span className="mr-1">Link externo 2</span>
                         <FontAwesomeIcon icon={faExternalLinkSquareAlt} aria-hidden="true" />
                       </a>
@@ -162,16 +161,16 @@ export default function Main() {
                     <div className="social-network">
                       <div className="social-network-title">Redes Sociais</div>
                       <div className="d-flex">
-                        <a className="br-button circle" href="javascript:void(0)" aria-label="Compartilhar por Facebook">
+                        <a className="br-button circle" href="/" aria-label="Compartilhar por Facebook">
                           <FontAwesomeIcon icon={faFacebookF} aria-hidden="true" />
                         </a>
-                        <a className="br-button circle" href="javascript:void(0)" aria-label="Compartilhar por Twitter">
+                        <a className="br-button circle" href="/" aria-label="Compartilhar por Twitter">
                           <FontAwesomeIcon icon={faTwitter} aria-hidden="true" />
                         </a>
-                        <a className="br-button circle" href="javascript:void(0)" aria-label="Compartilhar por Linkedin">
+                        <a className="br-button circle" href="/" aria-label="Compartilhar por Linkedin">
                           <FontAwesomeIcon icon={faLinkedinIn} aria-hidden="true" />
                         </a>
-                        <a className="br-button circle" href="javascript:void(0)" aria-label="Compartilhar por Whatsapp">
+                        <a className="br-button circle" href="/" aria-label="Compartilhar por Whatsapp">
                           <FontAwesomeIcon icon={faWhatsapp} aria-hidden="true" />
                         </a>
                       </div>
