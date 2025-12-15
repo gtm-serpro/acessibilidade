@@ -26,17 +26,18 @@ import Breadcrumb from './ui/Breadcrumb';
 import { ActionCard } from "./ui/ActionCard";
 
 const cards = [
-  {
-    title: "Férias",
-    description: "Solicite, acompanhe e consulte os períodos de férias disponíveis.",
-    icon: faUmbrellaBeach,
-    href: "/ferias",
-  },
+  
   {
     title: "Benefícios",
     description: "Consulte, acompanhe e verifique os benefícios disponíveis para você.",
     icon: faGift,
     href: "/beneficios",
+  },
+  {
+    title: "Férias",
+    description: "Solicite, acompanhe e consulte os períodos de férias disponíveis.",
+    icon: faUmbrellaBeach,
+    href: "/ferias",
   },
   {
     title: "Licença-Prêmio",
