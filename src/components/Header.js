@@ -117,7 +117,7 @@ export default function Header() {
 
     <div className="header-bottom">
       <div className="header-menu">
-        <div className="header-menu-trigger  ml-n2">
+        <div className="header-menu-trigger ml-n2 mr-1">
           <button
             className="br-button small circle"
             type="button"
@@ -131,8 +131,8 @@ export default function Header() {
         </div>
         <a href='/'>
           <div className="header-info">
-            <div className="header-title">SGP</div>
-            <div className="header-subtitle">Sistema de Gestão de Pessoas</div>
+            <div className="header-title mb-n1">SGP</div>
+            <div className="header-subtitle mb-1">Sistema de Gestão de Pessoas</div>
           </div>
         </a>
       </div>
