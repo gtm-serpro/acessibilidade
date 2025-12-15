@@ -1,19 +1,26 @@
 import { useEffect } from 'react';
-import SkipLinks from './components/SkipLinks.tsx';
-import Header from './components/Header.tsx';
-import Main from './components/Main.tsx';
-import Footer from './components/Footer.tsx';
+import SkipLinks from './components/SkipLinks';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 const App = () => {
   useEffect(() => {
-    // Inicializa o DS Gov quando o componente monta
-    if (typeof window !== 'undefined') {
-      import('@govbr-ds/core/dist/core-init').then(() => {
+    // Inicializa o DS Gov apenas uma vez quando o componente monta
+    const initDSGov = async () => {
+      try {
+        // Aguarda um pequeno delay para garantir que o DOM está pronto
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
         if (window.BRCore) {
-          window.BRCore.init();
+          window.BRCore();
         }
-      });
-    }
+      } catch (error) {
+        console.error('Erro ao inicializar DS Gov:', error);
+      }
+    };
+
+    initDSGov();
   }, []);
 
   return (

@@ -2,15 +2,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTimes,
   faExternalLinkSquareAlt,
-  faChevronRight,
-  faHome,
   faBell,
   faHeart,
   faAddressBook,
   faBook,
   faTree,
   faMoon,
-  faArchive
+  faArchive,
+  faUser,
+  faIdBadge,
+  faUmbrellaBeach,
+  faGift,
+  faMedal,
+  faFileInvoiceDollar,
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faFacebookF, 
@@ -18,11 +22,53 @@ import {
   faLinkedinIn, 
   faWhatsapp 
 } from '@fortawesome/free-brands-svg-icons';
+import Breadcrumb from './ui/Breadcrumb';
+import { ActionCard } from "./ui/ActionCard";
+
+const cards = [
+  {
+    title: "Cadastro Pessoal",
+    description: "Inscreva, consulte e atualize os dados do seu cadastro.",
+    icon: faUser,
+    href: "/cadastro-pessoal",
+  },
+  {
+    title: "Cadastro Funcionário",
+    description: "Inscreva, consulte e atualize os dados do cadastro do funcionário.",
+    icon: faIdBadge,
+    href: "/cadastro-funcionario",
+  },
+  {
+    title: "Férias",
+    description: "Defina o período das suas férias!",
+    icon: faUmbrellaBeach,
+    href: "/ferias",
+  },
+  {
+    title: "Benefícios",
+    description: "Consulte todos os benefícios.",
+    icon: faGift,
+    href: "/beneficios",
+  },
+  {
+    title: "Licença Prêmio",
+    description: "Consulte etc etc etc",
+    icon: faMedal,
+    href: "/licenca-premio",
+  },
+  {
+    title: "Informe de Rendimentos (IRRF)",
+    description: "Baixe aqui o Informe de Rendimentos para o exercício desejado.",
+    icon: faFileInvoiceDollar,
+    href: "/irrf",
+  },
+];
+
 
 export default function Main() {
     return (  
         <main className="d-flex flex-fill mb-5" id="main">
-        <div className="container-fluid d-flex">
+        <div className="container d-flex">
           <div className="row">
             {/* Menu Lateral */}
             <div className="br-menu" id="main-navigation">
@@ -141,55 +187,28 @@ export default function Main() {
 
             {/* Conteúdo Principal */}
             <div className="col mb-5">
-              <nav className="br-breadcrumb">
-                <ol className="crumb-list" role="list">
-                  <li className="crumb home">
-                    <a className="br-button circle" href="javascript:void(0)">
-                      <span className="sr-only" >Página inicial</span>
-                      <FontAwesomeIcon icon={faHome} className="icon"/>
-                    </a>
-                  </li>
-                  <li className="crumb">
-                    <FontAwesomeIcon icon={faChevronRight} className="icon" />
-                    <a href="javascript:void(0)">Tela Anterior</a>
-                  </li>
-                  <li className="crumb" data-active="active">
-                    <FontAwesomeIcon icon={faChevronRight} className="icon" />
-                    <span tabIndex="0" aria-current="page">Tela Atual</span>
-                  </li>
-                </ol>
-              </nav>
+              {/* <Breadcrumb /> */}
               
               <div className="main-content pl-sm-3 mt-4" id="main-content">
-                <h1>Título h1</h1>
-                <p>Parágrafo de exemplo <a href="">link de exemplo</a>.</p>
+                {/* <h1>Título h1</h1>
+                <p>Parágrafo de exemplo <a href="">link de exemplo</a>.</p> */}
                 
                 <div className="row">
-                  <div className="col-sm d-flex">
-                    <div className="br-card">
-                      <div className="card-header">Card de exemplo 1</div>
-                      <div className="card-content">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      </div>
+                  
+                  {cards.map((card) => (
+                    <div className='col-sm-4'>
+                    <ActionCard
+                      key={card.title}
+                      title={card.title}
+                      description={card.description}
+                      icon={card.icon}
+                      href={card.href}
+                    />
                     </div>
-                  </div>
-                  <div className="col-sm d-flex">
-                    <div className="br-card">
-                      <div className="card-header">Card de exemplo 2</div>
-                      <div className="card-content">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm d-flex">
-                    <div className="br-card">
-                      <div className="card-header">Card de exemplo 3</div>
-                      <div className="card-content">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
+
+                
               </div>
             </div>
           </div>
