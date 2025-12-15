@@ -203,7 +203,7 @@ function FeriasPeriodos({ periodos, onRemove }) {
   if (!periodos.length) {
     return (
       <div className="br-card p-4">
-        <h2 className="h5 mb-3">Períodos selecionados</h2>
+        <h2 className="h5 mb-3">Períodos Adicionados</h2>
         <p className="text-down-01 mb-0">Nenhum período selecionado ainda.</p>
       </div>
     );
