@@ -9,14 +9,10 @@ export default function Breadcrumb() {
     <nav className="br-breadcrumb">
         <ol className="crumb-list" role="list">
             <li className="crumb home">
-                <a className="br-button circle" href="javascript:void(0)">
+                <a className="br-button circle" href="/">
                     <span className="sr-only" >Página inicial</span>
                     <FontAwesomeIcon icon={faHome} />
                 </a>
-            </li>
-            <li className="crumb">
-                <FontAwesomeIcon icon={faChevronRight} className="icon" />
-                <a href="javascript:void(0)">Tela Anterior</a>
             </li>
             <li className="crumb" data-active="active">
                 <FontAwesomeIcon icon={faChevronRight} className="icon" />

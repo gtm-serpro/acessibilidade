@@ -38,3 +38,40 @@ main{
   align-items: center;
   justify-content: center;
 }
+
+
+.rdp-month_grid thead tr th {
+  text-align: center;
+}
+
+
+.rdp-day{
+  padding:0;
+}
+/* Evita overflow em telas menores */
+.ferias-daypicker table {
+  width: 100%;
+}
+.ferias-daypicker {
+  --rdp-accent-color: #1351B4!important;
+  --rdp-background-color: #E7F0FA!important;
+  --rdp-accent-color-dark: #0C326F!important;
+}
+
+/* Dia selecionado */
+.ferias-daypicker .rdp-day_selected,
+.ferias-daypicker .rdp-day_range_start,
+.ferias-daypicker .rdp-day_range_end {
+  background-color: #1351B4!important;
+  color: #fff!important;
+  font-weight: 600!important;
+}
+
+/* Intervalo */
+.ferias-daypicker .rdp-day_range_middle {
+  background-color: #E7F0FA!important;
+  color: #1351B4!important;
+}
+.header-logo {
+  width: 50px;
+}
