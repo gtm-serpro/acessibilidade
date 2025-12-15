@@ -270,37 +270,52 @@ function FeriasHistorico() {
       <h2 className="h5 mb-3">Histórico de férias</h2>
 
       <div>
-        {Object.entries(historico).map(([ano, periodos]) => (
-          <div key={ano} className="mb-2" style={{borderBottom: '1px solid #ddd'}}>
-            <button
-              className="w-100 p-3 d-flex justify-content-between align-items-center"
-              style={{
-                border: 'none',
-                background: 'none',
-                cursor: 'pointer',
-                textAlign: 'left'
-              }}
-              onClick={() => toggleAno(ano)}
-            >
-              <strong>{ano}</strong>
-              <i className={`fas fa-chevron-${anoAberto === ano ? 'up' : 'down'}`} />
-            </button>
+  {Object.entries(historico)
+    .sort(([anoA], [anoB]) => Number(anoB) - Number(anoA))
+    .map(([ano, periodos]) => (
+      <div
+        key={ano}
+        className="mb-2"
+        style={{ borderBottom: "1px solid #ddd" }}
+      >
+        <button
+          className="w-100 p-3 d-flex justify-content-between align-items-center"
+          style={{
+            border: "none",
+            background: "none",
+            cursor: "pointer",
+            textAlign: "left",
+          }}
+          onClick={() => toggleAno(ano)}
+          aria-expanded={anoAberto === ano}
+        >
+          <strong>{ano}</strong>
+          <i
+            className={`fas fa-chevron-${
+              anoAberto === ano ? "up" : "down"
+            }`}
+            aria-hidden="true"
+          />
+        </button>
 
-            {anoAberto === ano && (
-              <div className="px-3 pb-3">
-                <div className="br-list">
-                  {periodos.map((p, i) => (
-                    <div key={i} className="br-item">
-                      <strong>{i + 1}º período:</strong> {p.inicio} até {p.fim}
-                      <span className="text-down-01 ml-2">({p.dias} dias)</span>
-                    </div>
-                  ))}
+        {anoAberto === ano && (
+          <div className="px-3 pb-3">
+            <div className="br-list">
+              {periodos.map((p, i) => (
+                <div key={i} className="br-item">
+                  <strong>{i + 1}º período:</strong> {p.inicio} até {p.fim}
+                  <span className="text-down-01 ml-2">
+                    ({p.dias} dias)
+                  </span>
                 </div>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
-        ))}
+        )}
       </div>
+    ))}
+</div>
+
     </div>
   );
 }
