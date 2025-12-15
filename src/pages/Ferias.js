@@ -7,8 +7,10 @@ import Breadcrumb from '../components/ui/Breadcrumb';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTimes,
-  faArrowLeft
+  faArrowLeft,
+  faCheckCircle
 } from '@fortawesome/free-solid-svg-icons';
+
 // Hook personalizado para gerenciar férias
 function useFerias() {
   const [periodos, setPeriodos] = useState([]);
@@ -149,7 +151,7 @@ function FeriasCalendario({ range, onSelect, onConfirm, diasRestantes, periodos 
     <div className="br-card p-4">
       <h2 className="h5 mb-3">Selecionar período de férias</h2>
 
-      <p className="mb-3 text-down-01">
+      <p className="mb-3">
         Selecione no calendário o início e fim do período. Mínimo de 5 dias por período.
       </p>
 
@@ -205,7 +207,7 @@ function FeriasPeriodos({ periodos, onRemove }) {
     return (
       <div className="br-card p-4">
         <h2 className="h5 mb-3">Períodos Adicionados</h2>
-        <p className="text-down-01 mb-0">Nenhum período selecionado ainda.</p>
+        <p className="mb-0">Nenhum período selecionado ainda.</p>
       </div>
     );
   }
@@ -338,22 +340,53 @@ export default function Ferias() {
   } = useFerias();
 
   const [solicitacaoEnviada, setSolicitacaoEnviada] = useState(false);
-
+const [mostrarSucesso, setMostrarSucesso] = useState(false);
   const handleConfirmarSolicitacao = () => {
-    if (podeConfirmar) {
-      setSolicitacaoEnviada(true);
-      setTimeout(() => {
-        alert("Solicitação de férias enviada com sucesso!");
-        limparTudo();
-        setSolicitacaoEnviada(false);
-      }, 1000);
-    }
-  };
+  if (podeConfirmar) {
+    setSolicitacaoEnviada(true);
+    setMostrarSucesso(true);
+
+    setTimeout(() => {
+      limparTudo();
+      setSolicitacaoEnviada(false);
+      // opcional: esconder automaticamente após alguns segundos
+      // setMostrarSucesso(false);
+    }, 1000);
+  }
+};
+
 
   return (
     <main className="container-lg mb-5" id="main-content">
       <Breadcrumb current="Férias"/>
+{mostrarSucesso && (
+  <div className="br-message success" role="alert">
+    <div className="icon">
+      <FontAwesomeIcon icon={faCheckCircle} className='' />
+    </div>
 
+    <div
+      className="content"
+      aria-label="Sucesso. Solicitação de férias enviada."
+    >
+      <span className="message-title">Sucesso.</span>
+      <span className="message-body">
+        Solicitação de férias enviada com sucesso!
+      </span>
+    </div>
+
+    <div className="close">
+      <button
+        className="br-button circle small"
+        type="button"
+        aria-label="Fechar mensagem de sucesso"
+        onClick={() => setMostrarSucesso(false)}
+      >
+        <FontAwesomeIcon icon={faTimes} />
+      </button>
+    </div>
+  </div>
+)}
       <h1 className="mb-4">Férias</h1>
 
       <div className="row">
@@ -401,9 +434,10 @@ export default function Ferias() {
 
       <FeriasHistorico />
       <a href="/">
-<FontAwesomeIcon icon={faArrowLeft} className='w-1' />Voltar
+<FontAwesomeIcon icon={faArrowLeft} className='' />Voltar
       </a>
       
+
     </main>
   );
 }
